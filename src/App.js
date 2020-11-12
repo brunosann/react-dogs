@@ -1,9 +1,11 @@
 import React from 'react'
+import Api from './test_api/Api'
+import './App.css'
 
 function App() {
   return (
     <React.Fragment>
-      <h1>Hello Dogs</h1>
+      <Api />
     </React.Fragment>
   );
 }

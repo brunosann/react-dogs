@@ -1,0 +1,22 @@
+* {
+  margin: 0 30px;
+  padding: 0;
+}
+body {
+}
+input {
+  display: block;
+  margin-bottom: 25px;
+  width: 200px;
+  height: 20px;
+  padding: 5px;
+}
+button {
+  padding: 10px 30px;
+  background-color: #3281a8;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+}
