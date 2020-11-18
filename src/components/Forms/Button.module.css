@@ -1,0 +1,23 @@
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  min-width: 120px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #fb1;
+  color: #764701;
+  box-sizing: border-box;
+  font-weight: bold;
+  transition: 0.2s;
+  outline: none;
+}
+
+.button:hover,
+.button:focus {
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
+}
+
+.button:disabled {
+  opacity: 0.6;
+}
