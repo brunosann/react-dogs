@@ -13,7 +13,6 @@ const useForm = (type) => {
 
   function onChange({target}) {
     setValue(target.value)
-    console.log(target.name, target.value)
     if(type) console.log(type)
   }
 

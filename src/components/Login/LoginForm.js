@@ -1,40 +1,43 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import useForm from '../../Hooks/useForm'
+import { UserContext } from '../../UserContext'
 import Button from '../Forms/Button'
 import Input from '../Forms/Input'
+import Error from '../Helpers/Error'
+import style from './LoginForm.module.css'
+import styleBtn from '../Forms/Button.module.css'
 
 const LoginForm = () => {
   const [username, setUsername] = React.useState('')
   const [password, setPassword] = React.useState('')
 
+  const {userLogin, error, loading} = React.useContext(UserContext)
+
   async function handleSubmit(event) {
     event.preventDefault()
     if (!username || !password) return
-    const response = await fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      })
-    })
-    const responseJson = await response.json()
-    console.log(responseJson)
+    userLogin(username, password)
   }
-  
+
   return (
-    <section>
+    <section className="animaLeft">
+      <h1 className="title">Login</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Usuario" type="text" name="usuario" value={username} setValue={setUsername} />
         <Input label="Senha" type="password" name="password"  value={password} setValue={setPassword} />
-        <Button>Entrar</Button>
+        {loading ? 
+          ( <Button disabled>Carregando...</Button>)
+          :
+          ( <Button>Entrar</Button>)
+        }
+        {error && <Error error={error} />}
       </form>
-      <Link to="/login/cadastrar">Cadastrar</Link>
+      <Link className={style.perdeu} to="/login/redefinir">Esqueceu a Senha?</Link>
+      <h2 className={style.subtitle}>Cadastre-se</h2>
+      <p className={style.cadastro}>Ainda não possui conta? Cadastre-se!</p>
+      <Link className={styleBtn.button} to="/login/cadastrar">Cadastrar</Link>
       <br/>
-      <Link to="/login/redefinir">Esqueceu Senha</Link>
     </section>
   )
 }
