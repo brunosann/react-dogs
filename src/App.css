@@ -45,6 +45,10 @@ input {
   margin: 0 auto;
 }
 
+.mainContainer {
+  margin-top: 4rem;
+}
+
 .title {
   font-size: 2.5rem;
   font-family: var(--type-second);

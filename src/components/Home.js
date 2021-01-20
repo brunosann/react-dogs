@@ -1,10 +1,11 @@
 import React from 'react'
+import Feed from './Feed/Feed'
 
 const Home = () => {
   return (
-    <React.Fragment>
-      ola
-    </React.Fragment>
+    <section className="container mainContainer">
+      <Feed />
+    </section>
   )
 }
 
