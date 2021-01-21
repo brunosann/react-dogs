@@ -19,7 +19,7 @@ const PhotoCommentsForm = ({id, setComments}) => {
       setComments((comments) => [...comments, json])
     }
   }
-  console.log(comment)
+  
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
       <textarea 
