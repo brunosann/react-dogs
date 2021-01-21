@@ -60,7 +60,6 @@ export const UserStorage = ({children}) => {
       window.localStorage.setItem('token', token)
       await getUser(token)
       window.location.pathname = '/conta'
-      console.log(window.location)
     } catch (error) {
         setError(error.message)
         setLogin(false)

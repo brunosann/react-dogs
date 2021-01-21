@@ -6,7 +6,6 @@ const Image = ({alt, ...props}) => {
 
   function handleLoad({target}) {
     target.style.opacity = 1
-    console.log('carregou');
     setSkeleton(false)
   }
 

@@ -20,7 +20,6 @@ const TokenPost = () => {
     })
     const response = await sendUser.json()
     setToken(response.token)
-    console.log(response)
   }
 
   return (

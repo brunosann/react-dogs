@@ -13,7 +13,6 @@ const useForm = (type) => {
 
   function onChange({target}) {
     setValue(target.value)
-    if(type) console.log(type)
   }
 
   function validate(value) {

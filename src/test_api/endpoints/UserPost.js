@@ -20,8 +20,6 @@ const UserPost = () => {
       body: data
     })
     const response = await sendUser.json()
-    console.log(data)
-    console.log(response)
   }
 
   return (
