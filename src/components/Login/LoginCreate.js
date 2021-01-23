@@ -6,6 +6,7 @@ import { UserContext } from '../../UserContext'
 import Button from '../Forms/Button'
 import Input from '../Forms/Input'
 import Error from '../Helpers/Error'
+import Head from '../Helpers/Head'
 
 const LoginCreate = () => {
   const username = useForm()
@@ -28,6 +29,7 @@ const LoginCreate = () => {
 
   return (
     <section className="animaLeft">
+      <Head title="Criar Conta" />
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
         <Input label='Usuario' type="text" name="user" {...username} />

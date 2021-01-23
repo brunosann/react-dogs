@@ -14,22 +14,24 @@ import {UserStorage} from './UserContext'
 
 function App() {
   return (
-    <React.Fragment>
+    <div className="App">
       <UserStorage>
         <BrowserRouter>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="login/*" element={<Login />} />
-            <Route path="foto/:id" element={<Photo />} />
-            <Route path="perfil/:user" element={<UserProfile />} />
-            <ProtectRoute path="conta/*" element={<User />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <main className="AppBody">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="login/*" element={<Login />} />
+              <Route path="foto/:id" element={<Photo />} />
+              <Route path="perfil/:user" element={<UserProfile />} />
+              <ProtectRoute path="conta/*" element={<User />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
           <Footer />
         </BrowserRouter>
       </UserStorage>
-    </React.Fragment>
+    </div>
   );
 }
 

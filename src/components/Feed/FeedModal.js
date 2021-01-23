@@ -20,7 +20,7 @@ const FeedModal = ({photo, setModalPhoto}) => {
 
   return (
     <div className={styles.modal} onClick={handleOutSideClick}>
-      {error && <Error  error={error}/>}
+      {error && <p style={{margin: '0 auto'}}><Error  error={error}/></p> }
       {loading && <Loading />}
       {data &&  <PhotoContent data={data} />}
     </div>

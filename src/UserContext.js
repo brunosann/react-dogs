@@ -23,7 +23,7 @@ export const UserStorage = ({children}) => {
     setLoading(false)
     setLogin(false)
     window.localStorage.removeItem('token')
-    window.location.pathname = '/login'
+    // window.location.pathname = '/login'
   }, [])
 
   React.useEffect(() => {
@@ -59,7 +59,7 @@ export const UserStorage = ({children}) => {
       const {token} = await response.json()
       window.localStorage.setItem('token', token)
       await getUser(token)
-      window.location.pathname = '/conta'
+      // window.location.pathname = '/conta'
     } catch (error) {
         setError(error.message)
         setLogin(false)
